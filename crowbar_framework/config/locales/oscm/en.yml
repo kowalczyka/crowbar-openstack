@@ -1,0 +1,10 @@
+en:
+  barclamp:
+    oscm:
+      edit_attributes:
+        section1_header: 'Section 1 attributes'
+        section1:
+          att1: 'Attribute 1'
+          att2: 'Attribute 2'
+        timeout: 'Timeout (in minutes)'
+        user: 'Username'
