@@ -1,0 +1,119 @@
+{
+  "type": "map",
+  "required": true,
+  "mapping": {
+    "id": { "type": "str", "required": true, "pattern": "/^-|^template-oscm$/"},
+    "description": { "type": "str", "required": true },
+    "attributes": {
+      "type": "map",
+      "required": true,
+      "mapping": {
+        "oscm": {
+          "type": "map",
+          "required": true,
+          "mapping": {
+            "timeout": { "type": "int", "required": true },
+            "debug": { "type": "bool", "required": true },
+            "enable_keystone_listener": { "type": "bool", "required": true },
+            "group": { "type": "str", "required": false },
+            "user": { "type": "str", "required": false },
+            "keystone_instance": { "type": "str", "required": true },
+            "database_instance": { "type": "str", "required": true },
+            "rabitmq_instance": { "type": "str", "required": true },
+            "service_password": { "type": "str", "required": true },
+            "service_user": { "type": "str", "required": true },
+            "api" : {
+              "type" : "map",
+              "required" : true,
+              "mapping": {
+                "bind_host": { "type": "str", "required": true },
+                "bind_port": { "type": "int", "required": true },
+                "logfile": { "type": "str", "required": true }
+              }
+            },
+            "db" : {
+              "type" : "map",
+              "required" : true,
+              "mapping": {
+                "database": { "type": "str", "required": true },
+                "user": { "type": "str", "required": true },
+                "password": { "type": "str", "required": true }
+              }
+            },
+            "section_1" : {
+              "type" : "map",
+              "required" : true,
+              "mapping": {
+                "att1": { "type": "str", "required": true },
+                "att2": { "type": "str", "required": true }
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "deployment": {
+      "type": "map",
+      "required": true,
+      "mapping": {
+        "oscm": {
+          "type": "map",
+          "required": true,
+          "mapping": {
+            "crowbar-revision": { "type": "int", "required": true },
+            "crowbar-committing": { "type": "bool" },
+            "crowbar-applied": { "type": "bool" },
+            "crowbar-status": { "type": "str" },
+            "crowbar-failed": { "type": "str" },
+            "crowbar-queued": { "type": "bool" },
+            "schema-revision": { "type": "int" },
+            "element_states": {
+              "type": "map",
+              "mapping": {
+                = : {
+                  "type": "seq",
+                  "required": true,
+                  "sequence": [ { "type": "str" } ]
+                }
+              }
+            },
+            "elements": {
+              "type": "map",
+              "required": true,
+              "mapping": {
+                = : {
+                  "type": "seq",
+                  "required": true,
+                  "sequence": [ { "type": "str" } ]
+                }
+              }
+            },
+            "element_order": {
+              "type": "seq",
+              "required": true,
+              "sequence": [ {
+                "type": "seq",
+                "sequence": [ { "type": "str" } ]
+              } ]
+            },
+            "config": {
+              "type": "map",
+              "required": true,
+              "mapping": {
+                "environment": { "type": "str", "required": true },
+                "mode": { "type": "str", "required": true },
+                "transitions": { "type": "bool", "required": true },
+                "transition_list": {
+                  "type": "seq",
+                  "required": true,
+                  "sequence": [ { "type": "str" } ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
