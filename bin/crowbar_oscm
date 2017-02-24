@@ -1,0 +1,5 @@
+require File.join(File.expand_path(File.dirname(__FILE__)), "barclamp_lib")
+@barclamp = "oscm"
+@timeout = 3600
+
+main

@@ -1,0 +1,23 @@
+barclamp:
+  name: 'oscm'
+  display: 'OSCM'
+  description: 'Open Service Catalog Manager'
+  version: 1
+  member:
+    - 'openstack'
+  requires:
+    - '@crowbar'
+    - 'horizon'
+    - 'keystone'
+    - 'utils'
+  os_support:
+    - 'ubuntu-10.10'
+    - 'ubuntu-12.04'
+
+crowbar:
+  layout: 1
+  order: 200
+  run_order: 200
+  chef_order: 200
+  proposal_schema_version: 3
+
