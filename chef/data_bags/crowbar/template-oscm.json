@@ -1,0 +1,56 @@
+{
+  "id": "template-oscm",
+  "description": "OSCM",
+  "attributes": {
+    "oscm" : {
+       "api" : {
+         "bind_host" : "*",
+         "bind_port" : 1234,
+         "logfile" : "/var/log/oscm/oscm-api.log"
+       },
+       "db" : {
+         "database" : "oscm",
+         "password" : "oscm",
+         "user" : "oscm"
+       },
+       "section_1": {
+         "att1": "val1",
+         "att2": "val2"
+       },
+       "timeout": 300,
+       "debug" : false,
+       "enable_keystone_listener" : false,
+       "group" : "oscm",
+       "user" : "oscm",
+       "database_instance": "none",
+       "keystone_instance": "none",
+       "rabbitmq_instance": "none",
+       "service_password": "oscm",
+       "service_user": "oscm"
+     }
+  },
+  "deployment": {
+    "oscm" : {
+      "crowbar-revision": 0,
+      "crowbar-applied": false,
+      "schema-revision": 100,
+      "element_states": {
+        "oscm-server": [ "readying", "ready", "applying" ]
+      },
+      "element_order": [
+        ["oscm-server" ]
+      ],
+      "element_run_list_order": {
+        "oscm-server": 110
+      },
+      "elements": {},
+
+      "config": {
+        "environment": "oscm-base-config",
+        "mode": "full",
+        "transitions": false,
+        "transition_list": []
+      }
+    }
+  }
+}
