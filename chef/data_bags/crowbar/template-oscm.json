@@ -24,7 +24,6 @@
        "user" : "oscm",
        "database_instance": "none",
        "keystone_instance": "none",
-       "rabbitmq_instance": "none",
        "service_password": "oscm",
        "service_user": "oscm"
      }
@@ -40,9 +39,6 @@
       "element_order": [
         ["oscm-server" ]
       ],
-      "element_run_list_order": {
-        "oscm-server": 110
-      },
       "elements": {},
 
       "config": {

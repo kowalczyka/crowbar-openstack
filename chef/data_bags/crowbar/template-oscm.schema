@@ -2,7 +2,7 @@
   "type": "map",
   "required": true,
   "mapping": {
-    "id": { "type": "str", "required": true, "pattern": "/^-|^template-oscm$/"},
+    "id": { "type": "str", "required": true},
     "description": { "type": "str", "required": true },
     "attributes": {
       "type": "map",
@@ -19,7 +19,6 @@
             "user": { "type": "str", "required": false },
             "keystone_instance": { "type": "str", "required": true },
             "database_instance": { "type": "str", "required": true },
-            "rabitmq_instance": { "type": "str", "required": true },
             "service_password": { "type": "str", "required": true },
             "service_user": { "type": "str", "required": true },
             "api" : {
