@@ -2,9 +2,22 @@ en:
   barclamp:
     oscm:
       edit_attributes:
+        database_instance: 'Database Instance'
+        keystone_instance: 'Keystone'
+        api_header: 'API Settings'
+          api:
+            bind_host: 'Address'
+            bind_port: 'Port'
         section1_header: 'Section 1 attributes'
-        section1:
-          att1: 'Attribute 1'
-          att2: 'Attribute 2'
+          section1:
+            att1: 'Attribute 1'
+            att2: 'Attribute 2'
         timeout: 'Timeout (in minutes)'
-        user: 'Username'
+        db_header: 'Database settings'
+        db:
+          database: 'Database'
+          password: 'Password'
+          user: 'Username'
+        enable_keystone_listener: "Enable OSCM's Keystone listener service"
+        group: 'Group for OSCM services'
+        user: 'User for OSCM services'

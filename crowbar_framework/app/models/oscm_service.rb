@@ -26,12 +26,13 @@ class OscmService < PacemakerServiceObject
     base = super
 
     nodes = NodeObject.all
+	
+	server_nodes = nodes.select { |n| n.intended_role == "controller" }
+    server_nodes = [nodes.first] if server_nodes.empty?
 
-    if nodes.size >= 1
-      base["deployment"]["oscm"]["elements"] = {
-        "oscm-server" => [ nodes.first[:fqdn] ]
-      }
-    end
+    base["deployment"]["oscm"]["elements"] = {
+      "oscm-server" => [server_nodes.first.name]
+    } unless server_nodes.nil?
     
     @logger.debug("Oscm create_proposal: exiting")
     base
@@ -43,10 +44,4 @@ class OscmService < PacemakerServiceObject
     super
   end
 
-  def apply_role_pre_chef_call(_old_role, role, all_nodes)
-    @logger.debug("Oscm apply_role_pre_chef_call: "\
-                  "entering #{all_nodes.inspect}")
-
-    @logger.debug("Oscm apply_role_pre_chef_call: leaving")
-  end
 end

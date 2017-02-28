@@ -37,12 +37,14 @@
         "oscm-server": [ "readying", "ready", "applying" ]
       },
       "element_order": [
-        ["oscm-server" ]
+        [ "oscm-server" ]
       ],
       "elements": {},
-
+	  "element_run_list_order": {
+        "oscm-server": 110
+      },
+      
       "config": {
-        "environment": "oscm-base-config",
         "mode": "full",
         "transitions": false,
         "transition_list": []

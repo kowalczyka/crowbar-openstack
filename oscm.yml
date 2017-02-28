@@ -7,17 +7,13 @@ barclamp:
     - 'openstack'
   requires:
     - '@crowbar'
-    - 'horizon'
+    - 'database'
     - 'keystone'
-    - 'utils'
-  os_support:
-    - 'ubuntu-10.10'
-    - 'ubuntu-12.04'
 
 crowbar:
   layout: 1
-  order: 200
-  run_order: 200
-  chef_order: 200
+  order: 100
+  run_order: 100
+  chef_order: 100
   proposal_schema_version: 3
 
