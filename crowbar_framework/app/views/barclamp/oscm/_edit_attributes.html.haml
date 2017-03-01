@@ -1,3 +1,17 @@
 = attributes_for @proposal do
   .panel-sub
     = header show_raw_deployment?, true
+  
+  .panel-body  
+  	
+  	= integer_field %w(timeout)
+  	
+    %fieldset
+      %legend
+        = t(".section1_header")
+        
+      = string_field %w(section1 att1)
+      = string_field %w(section1 att2)
+      
+      
+    
