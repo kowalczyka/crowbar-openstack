@@ -2,16 +2,6 @@ en:
   barclamp:
     oscm:
       edit_attributes:
-      	api_header: 'API Settings'
-          api:
-            bind_host: 'Address'
-            bind_port: 'Port'
-            logfile: 'Log file'
-        db_header: 'Database settings'
-          db:
-            database: 'Database'
-            password: 'Password'
-            user: 'Username'
         section1_header: 'Section 1 attributes'
         section1:
           att1: 'Attribute 1'
