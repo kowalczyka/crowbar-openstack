@@ -13,7 +13,7 @@
          "password" : "oscm",
          "user" : "oscm"
        },
-       "section_1": {
+       "section1": {
          "att1": "val1",
          "att2": "val2"
        },

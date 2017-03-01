@@ -39,7 +39,7 @@
                 "password": { "type": "str", "required": true }
               }
             },
-            "section_1" : {
+            "section1" : {
               "type" : "map",
               "required" : true,
               "mapping": {
